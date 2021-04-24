@@ -1,29 +1,28 @@
 
-import java.util.HashMap;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-
-// todo   methode vérification saisie 
 class Main 
 {
     public static void main(String[] args)
     {
         Scanner message = new Scanner(System.in);
-        HashMap <String ,Integer>liste = new HashMap();
-        
+        SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+       
 
         do {
             
             System.out.println("Entrez une chaine de charactéres ou 'exit' pour mettre fin au programme : ");
             try
-            {    String chaine  = message.nextLine() ; 
+            {    String chaine = message.nextLine() ; 
                 if (chaine.equals("exit"))
                     System.exit(0);
-                
-                liste.put(chaine,Traitement.calcul(chaine));
-                System.out.println(liste);
-                Traitement.ajout();
-            
+                Traitement.verification("nom");
+                //Date date = new Date();
+                //int calcul = Traitement.calcul(chaine) ; 
+               // Traitement.ajout(s.format(date), chaine , calcul );
+                //System.out.println(chaine + " contient "+ calcul +" characteres unique ");
             }
             catch(Exception e ) 
             {
